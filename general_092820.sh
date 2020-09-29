@@ -95,3 +95,18 @@ info=$(ip a)
 echo "$info" > /opt/bash_test2/result
 ip=`grep '\<inet\>' /opt/bash_test2/result | grep -v '127.0.0.1' | awk -F" " '{print $2}' | awk -F"/" '{print $1}'`
 echo "ip address for this host $(hostname) is $ip"
+
+# while loop
+
+e=0
+
+while [ $e -lt 5 ]
+do
+  echo "$e"
+  e=$(( e + 1 ))
+done
+
+# parameter subsitution
+
+name="Jordan"
+echo "${name}s"
